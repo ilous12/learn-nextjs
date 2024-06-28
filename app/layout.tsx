@@ -1,4 +1,4 @@
-import Nativagation from "./about-us/components/natigation";
+import Nativagation from "./components/natigation";
 
 export const metadata = {
   title: {

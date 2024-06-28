@@ -1,7 +1,6 @@
 import { Suspense } from "react";
-import { API_URL } from "../../../(home)/page";
-import Movie from "../../../about-us/components/movie";
-import MovieVideos from "../../../about-us/components/movie-videos";
+import Movie from "../../../components/movie";
+import MovieVideos from "../../../components/movie-videos";
 
 export default function MovieDetail(props: { params: { id: string } }) {
   return (

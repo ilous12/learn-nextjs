@@ -1,4 +1,4 @@
-import { API_URL } from "../../(home)/page";
+import { API_URL } from "../constants";
 
 async function getMovie(id: string) {
   console.log(`Fetching movies: ${Date.now()}`);
