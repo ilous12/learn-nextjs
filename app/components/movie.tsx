@@ -1,17 +1,23 @@
-import { API_URL } from "../constants";
+"use client";
 
-async function getMovie(id: string) {
-  console.log(`Fetching movies: ${Date.now()}`);
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  const url = `${API_URL}/${id}`;
-  console.log(`URL=${url}`);
-  const response = await fetch(url);
-  const json = await response.json();
-  console.log("now fetching");
-  return json;
+import Link from "next/link";
+import style from "../styles/movie.module.css";
+import { useRouter } from "next/navigation";
+
+interface IMovieProps {
+  title: string;
+  id: string;
+  poster_path: string;
 }
-
-export default async function Movie({ id }: { id: string }) {
-  const movie = await getMovie(id);
-  return <h6>{JSON.stringify(movie)}</h6>;
+export default function Movie({ id, title, poster_path }: IMovieProps) {
+  const router = useRouter();
+  const onClick = () => {
+    router.push(`/movies/${id}`);
+  };
+  return (
+    <div className={style.movie} key={id}>
+      <img src={poster_path} alt={title} onClick={onClick} />
+      <Link href={`/movies/${id}`}>{title}</Link>
+    </div>
+  );
 }

@@ -1,4 +1,6 @@
 import Nativagation from "./components/natigation";
+import { Navigation } from "./components/navigation";
+import "./styles/global.css";
 
 export const metadata = {
   title: {
@@ -15,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Nativagation />
+        <Navigation />
         {children}
       </body>
     </html>
