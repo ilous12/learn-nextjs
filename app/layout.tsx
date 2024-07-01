@@ -1,4 +1,3 @@
-import Nativagation from "./components/natigation";
 import { Navigation } from "./components/navigation";
 import "./styles/global.css";
 
